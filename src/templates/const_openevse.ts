@@ -1,26 +1,26 @@
 /** OpenEVSE */
 
 import type { template } from './../types';
-import {TEMPLATE_EDITOR as edt} from './../const';
+import { TEMPLATE_EDITOR as edt } from './../const';
 
 
-export const data:template = {
+export const data: template = {
     config: {
         'domain': 'openevse',
         'name': 'OpenEVSE',
         'domainbase': '_status',
         'serviceid': edt.SERVICEID_DEVICE,
-        'serviceid_data': {entity: null, attr: 'id' },   
+        'serviceid_data': { entity: null, attr: 'id' },
     },
-    defaults:{
-        show_leds: true,        
+    defaults: {
+        show_leds: true,
     },
-    details:{
+    details: {
         //NAME, LOCATION, STATUS ETC
-        name: {text: 'Charger'},
-        location: {text: 'Home'},
+        name: { text: 'Charger' },
+        location: { text: 'Home' },
         status: {
-            entity_id: 'sensor.' +edt.ENTITYPREFIX +'_charging_status',
+            entity_id: 'sensor.' + edt.ENTITYPREFIX + '_charging_status',
         },
 
         // OVERRIDE CURRENTLIMITS
@@ -34,10 +34,10 @@ export const data:template = {
 
         // OVERRIDE COLLAPSIBLE BUTTON ICONS AND TOOLTIP TEXT
         collapsiblebuttons: {
-                group1: { text: 'click_for_group1', icon: 'mdi:speedometer' },
-                group2: { text: 'click_for_group2', icon: 'mdi:information' },
-                group3: { text: 'click_for_group3', icon: 'mdi:cog' },
-            },
+            group1: { text: 'click_for_group1', icon: 'mdi:speedometer' },
+            group2: { text: 'click_for_group2', icon: 'mdi:information' },
+            group3: { text: 'click_for_group3', icon: 'mdi:cog' },
+        },
 
         //ICONS LEFT AND RIGHT
         info_left: [
@@ -53,11 +53,11 @@ export const data:template = {
         ],
         info_right: [
             {
-                entity_id: 'sensor.' +edt.ENTITYPREFIX +'_charging_voltage',
+                entity_id: 'sensor.' + edt.ENTITYPREFIX + '_charging_voltage',
                 text: 'Voltage',    //TODO: should be replaced with translation tag
                 unit_show: true,
-            },{
-                entity_id: 'sensor.' +edt.ENTITYPREFIX +'_charging_current',
+            }, {
+                entity_id: 'sensor.' + edt.ENTITYPREFIX + '_charging_current',
                 text: 'Current',    //TODO: should be replaced with translation tag
                 unit_show: true,
             }
@@ -66,13 +66,13 @@ export const data:template = {
         //LIMITS
         group1: [
             {
-                entity_id: 'sensor.' +edt.ENTITYPREFIX +'_max_current',
+                entity_id: 'sensor.' + edt.ENTITYPREFIX + '_max_current',
                 text: 'Max current',                //TODO: should be replaced with translation tag
                 service: 'openevse.set_max_current',
-                service_data: {charger_id: edt.SERVICEID_ENTITY, current: '#SERVICEVAL#'},
+                service_data: { charger_id: edt.SERVICEID_ENTITY, current: '#SERVICEVAL#' },
             },
             {
-                entity_id: 'sensor.' +edt.ENTITYPREFIX +'_max_amps',
+                entity_id: 'sensor.' + edt.ENTITYPREFIX + '_max_amps',
                 text: 'Max amps',                   //TODO: should be replaced with translation tag
             },
         ],
@@ -161,7 +161,7 @@ export const data:template = {
 
             default: [
                 {
-                    entity_id: 'sensor.' +edt.ENTITYPREFIX +'_ambient_temperature',
+                    entity_id: 'sensor.' + edt.ENTITYPREFIX + '_ambient_temperature',
                     text: 'Ambient temperature',    //TODO: should be replaced with translation tag
                     unit_show: true,
                 },
@@ -169,44 +169,44 @@ export const data:template = {
 
             disabled: [
                 {
-                    entity_id: 'sensor.' +edt.ENTITYPREFIX +'_total_usage',
+                    entity_id: 'sensor.' + edt.ENTITYPREFIX + '_total_usage',
                     text: 'Total usage',    //TODO: should be replaced with translation tag
                     unit_show: true,
                 },
                 {
-                    entity_id: 'sensor.' +edt.ENTITYPREFIX +'_current_power_usage',
+                    entity_id: 'sensor.' + edt.ENTITYPREFIX + '_current_power_usage',
                     text: 'Power',    //TODO: should be replaced with translation tag
                 },
                 {
-                    entity_id: 'sensor.' +edt.ENTITYPREFIX +'_max_amps',
+                    entity_id: 'sensor.' + edt.ENTITYPREFIX + '_max_amps',
                     text: 'Max amps',       //TODO: should be replaced with translation tag
                 },
                 {
-                    entity_id: 'sensor.' +edt.ENTITYPREFIX +'_usage_this_session',
+                    entity_id: 'sensor.' + edt.ENTITYPREFIX + '_usage_this_session',
                     text: 'Session energy',       //TODO: should be replaced with translation tag
                 },
                 {
-                    entity_id: 'sensor.' +edt.ENTITYPREFIX +'_ambient_temperature',
+                    entity_id: 'sensor.' + edt.ENTITYPREFIX + '_ambient_temperature',
                     text: 'Temperature',       //TODO: should be replaced with translation tag
                 },
             ],
 
             active: [
                 {
-                    entity_id: 'sensor.' +edt.ENTITYPREFIX +'_current_power_usage',
+                    entity_id: 'sensor.' + edt.ENTITYPREFIX + '_current_power_usage',
                     text: 'Power',              //TODO: should be replaced with translation tag
                     unit_show: true,
                 },
                 {
-                    entity_id: 'sensor.' +edt.ENTITYPREFIX +'_current_capacity',
+                    entity_id: 'sensor.' + edt.ENTITYPREFIX + '_current_capacity',
                     text: 'Current',            //TODO: should be replaced with translation tag
                 },
                 {
-                    entity_id: 'sensor.' +edt.ENTITYPREFIX +'_usage_this_session',
+                    entity_id: 'sensor.' + edt.ENTITYPREFIX + '_usage_this_session',
                     text: 'Session energy',     //TODO: should be replaced with translation tag
                 },
                 {
-                    entity_id: 'sensor.' +edt.ENTITYPREFIX +'_ambient_temperature',
+                    entity_id: 'sensor.' + edt.ENTITYPREFIX + '_ambient_temperature',
                     text: 'Temperature',       //TODO: should be replaced with translation tag
                 },
             ],
@@ -218,23 +218,23 @@ export const data:template = {
             disabled: [
                 {
                     service: 'persistent_notification.create',      //TODO: remove test
-                    service_data: {message: 'This is a test!', title: 'TEST'},
+                    service_data: { message: 'This is a test!', title: 'TEST' },
                     text: 'Test button',
                     icon: 'mdi:alert',
                 },
 
-                ],
+            ],
 
             active: [   //TODO: need to know available service calls and what data needs to be sent
                 {
                     service: 'openevse.stop',
-                    service_data: {charger_id: edt.SERVICEID_ENTITY},
+                    service_data: { charger_id: edt.SERVICEID_ENTITY },
                     text: 'stop',
                     icon: 'hass:stop',
                 },
                 {
                     service: 'openevse.pause',
-                    service_data: {charger_id: edt.SERVICEID_ENTITY},
+                    service_data: { charger_id: edt.SERVICEID_ENTITY },
                     text: 'pause',
                     icon: 'hass:pause',
                 },
@@ -262,7 +262,7 @@ export const data:template = {
         //         },
         //     ],
         // },
-        }
+    }
 
 }
 

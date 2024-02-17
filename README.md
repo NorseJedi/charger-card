@@ -105,13 +105,38 @@ This card supports translations. Please, help to add more translations and impro
 This card was originally made to support charging robots from [Easee](https://easee-international.com/), but has been further developed to be fully configurable and customizable and can be used with any kind of charger. It can even be used for other things than EV-chargers, for instance your electric car or something completely different. Some `brand`s are added with built-in support to make the configuration really easy:
 
 - Easee
+- Zaptec Go
 - [_Your charger?_](https://github.com/tmjo/charger-card/wiki/How-to-add-template-for-new-brand)
 
 See [Wiki on how to add a brand](https://github.com/tmjo/charger-card/wiki/How-to-add-template-for-new-brand).
 
+### Note for Zaptec Go
+Since the Eco Mode (Smartmode) setting for Zaptec is only available as a bitwise feature-sensor on the Installation entity, it is recommended to create a template sensor for this in your configuration.yaml.
+The sensor can be created like this:
+```
+template:
+  - binary_sensor
+    - name: Elbillader EcoMode
+      state: >-
+        {% set ecomode = state_attr('binary_sensor.INSTALLATION-NAME_installation', 'enabled_features')|bitwise_and(8) %}
+        {% if ecomode %}
+          on
+        {% else %}
+          off
+        {% endif %}
+      icon: >-
+        {% set ecomode = state_attr('binary_sensor.INSTALLATION-NAME_installation', 'enabled_features')|bitwise_and(8) %}
+        {% if ecomode %}
+          mdi:cloud
+        {% else %}
+          mdi:cloud-off
+        {% endif %}
+```
+
 # Advanced configuration
 
 If your brand is on the list of supported models, you should be able to get away just by selecting the `brand` and `entity` main sensor from the UI editor of Home Assistant. However, if you want to fully customize it or use it for something else than supported by default `brand`s, you must do this yourself with YAML-code. It may seem overwhelming at first, so a trick can be applying a built-in `brand` as a template and start modifying the YAML code from there - this will give you the basic structure. Also see the examples further down.
+
 
 | Name                               |   Type    | Default      | Description                                                                                                                                                                                                                                                                                                                            |
 | ---------------------------------- | :-------: | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

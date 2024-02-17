@@ -2,27 +2,27 @@
 
 import { TEMPLATE_EDITOR } from '../const';
 import type { template } from './../types';
-import {TEMPLATE_EDITOR as edt} from './../const';
+import { TEMPLATE_EDITOR as edt } from './../const';
 
-export const data:template = {
+export const data: template = {
     config: {
         'domain': 'wallbox',
         'name': 'Wallbox charger',
         'domainbase': '_status_description',
         'serviceid': edt.SERVICEID_DEVICE,
-        'serviceid_data': {entity: null, attr: 'id' },   
+        'serviceid_data': { entity: null, attr: 'id' },
     },
-    defaults:{
-        show_leds: false,        
+    defaults: {
+        show_leds: false,
     },
-    details:{
+    details: {
         //NAME, LOCATION, STATUS ETC
         name: {
-            entity_id: 'sensor.' +edt.ENTITYPREFIX +'_status_description',
+            entity_id: 'sensor.' + edt.ENTITYPREFIX + '_status_description',
             attribute: 'name',
         },
         status: {
-            entity_id: 'sensor.' +edt.ENTITYPREFIX +'_status_description',
+            entity_id: 'sensor.' + edt.ENTITYPREFIX + '_status_description',
         },
 
         // OVERRIDE CURRENTLIMITS
@@ -40,25 +40,25 @@ export const data:template = {
 
         // OVERRIDE COLLAPSIBLE BUTTON ICONS AND TOOLTIP TEXT
         collapsiblebuttons: {
-                group1: { text: 'click_for_group1', icon: 'mdi:speedometer' },
-                group2: { text: 'click_for_group2', icon: 'mdi:information' },
-                group3: { text: 'click_for_group3', icon: 'mdi:cog' },
-            },
+            group1: { text: 'click_for_group1', icon: 'mdi:speedometer' },
+            group2: { text: 'click_for_group2', icon: 'mdi:information' },
+            group3: { text: 'click_for_group3', icon: 'mdi:cog' },
+        },
 
         //ICONS LEFT AND RIGHT
         info_left: [
             {
-                entity_id: 'switch.' +edt.ENTITYPREFIX +'_pause_resume',
+                entity_id: 'switch.' + edt.ENTITYPREFIX + '_pause_resume',
                 text: 'Pause/resume',
             }
         ],
         info_right: [
             {
-                entity_id: 'sensor.' +edt.ENTITYPREFIX +'_depot_price',
+                entity_id: 'sensor.' + edt.ENTITYPREFIX + '_depot_price',
                 text: 'Price per kWh',
                 unit_show: true,
-            },{
-                entity_id: 'sensor.' +edt.ENTITYPREFIX +'_max_charging_current',
+            }, {
+                entity_id: 'sensor.' + edt.ENTITYPREFIX + '_max_charging_current',
                 text: 'Power (Amps)',
                 unit_show: true,
             }
@@ -67,17 +67,17 @@ export const data:template = {
         //LIMITS
         group1: [
             {
-                entity_id: 'sensor.' +edt.ENTITYPREFIX +'_charging_power',
+                entity_id: 'sensor.' + edt.ENTITYPREFIX + '_charging_power',
                 text: 'dyn_charger_limit',
             },
             {
-                entity_id: 'sensor.' +edt.ENTITYPREFIX +'_max_charging_current',
+                entity_id: 'sensor.' + edt.ENTITYPREFIX + '_max_charging_current',
                 text: 'dyn_circuit_limit',
-            },{
-                entity_id: 'sensor.' +edt.ENTITYPREFIX +'_max_charger_limit',
+            }, {
+                entity_id: 'sensor.' + edt.ENTITYPREFIX + '_max_charger_limit',
                 text: 'max_charger_limit',
-            },{
-                entity_id: 'sensor.' +edt.ENTITYPREFIX +'_max_available_power',
+            }, {
+                entity_id: 'sensor.' + edt.ENTITYPREFIX + '_max_available_power',
                 text: 'max_circuit_limit',
             },
         ],
@@ -86,22 +86,22 @@ export const data:template = {
         group2: [
 
             {
-                entity_id: 'sensor.' +edt.ENTITYPREFIX +'_charging_power',
+                entity_id: 'sensor.' + edt.ENTITYPREFIX + '_charging_power',
                 text: 'power',
                 unit_show: true,
             },
             {
-                entity_id: 'sensor.' +edt.ENTITYPREFIX +'_charging_speed',
+                entity_id: 'sensor.' + edt.ENTITYPREFIX + '_charging_speed',
                 text: 'charger_current',
                 unit_show: true,
             },
             {
-                entity_id: 'sensor.' +edt.ENTITYPREFIX +'_max_charging_current',
+                entity_id: 'sensor.' + edt.ENTITYPREFIX + '_max_charging_current',
                 text: 'circuit_current',
                 unit_show: true,
             },
             {
-                entity_id: 'sensor.' +edt.ENTITYPREFIX +'_discharged_energy',
+                entity_id: 'sensor.' + edt.ENTITYPREFIX + '_discharged_energy',
                 text: 'session_energy',
                 unit_show: true,
             },
@@ -110,7 +110,7 @@ export const data:template = {
         //CONFIG
         group3: [
             {
-                entity_id: 'lock.' +edt.ENTITYPREFIX +'_locked_unlocked',
+                entity_id: 'lock.' + edt.ENTITYPREFIX + '_locked_unlocked',
                 text: 'enabled',
             },
         ],
@@ -120,28 +120,28 @@ export const data:template = {
 
             default: [
                 {
-                    entity_id: 'sensor.' +edt.ENTITYPREFIX +'_charging_power',
+                    entity_id: 'sensor.' + edt.ENTITYPREFIX + '_charging_power',
                     text: 'Charging power',
                     unit_show: true,
                 },
                 {
-                    entity_id: 'sensor.' +edt.ENTITYPREFIX +'_added_range',
+                    entity_id: 'sensor.' + edt.ENTITYPREFIX + '_added_range',
                     text: 'Added range',
                 },
                 {
-                    entity_id: 'binary_sensor.' +edt.ENTITYPREFIX +'_basic_schedule',
+                    entity_id: 'binary_sensor.' + edt.ENTITYPREFIX + '_basic_schedule',
                     text: 'schedule',
                 }
             ],
 
             disconnected: [
                 {
-                    entity_id: 'sensor.' +edt.ENTITYPREFIX +'_max_available_power',
+                    entity_id: 'sensor.' + edt.ENTITYPREFIX + '_max_available_power',
                     text: 'session_energy',
                     unit_show: true,
                 },
                 {
-                    entity_id: 'lock.' +edt.ENTITYPREFIX +'_locked_unlocked',
+                    entity_id: 'lock.' + edt.ENTITYPREFIX + '_locked_unlocked',
                     text: 'cable_locked',
                 },
             ],
@@ -149,22 +149,22 @@ export const data:template = {
 
             Charging: [
                 {
-                    entity_id: 'sensor.' +edt.ENTITYPREFIX +'_max_charging_current',
+                    entity_id: 'sensor.' + edt.ENTITYPREFIX + '_max_charging_current',
                     text: 'session_energy',
                     unit_show: true,
                 },
                 {
-                    entity_id: 'sensor.' +edt.ENTITYPREFIX +'_charging_power',
+                    entity_id: 'sensor.' + edt.ENTITYPREFIX + '_charging_power',
                     text: 'energy_per_hour',
                     unit_show: true,
                 },
                 {
-                    entity_id: 'sensor.' +edt.ENTITYPREFIX +'_added_range',
+                    entity_id: 'sensor.' + edt.ENTITYPREFIX + '_added_range',
                     text: 'circuit_current',
                     unit_show: true,
                 },
                 {
-                    entity_id: 'sensor.' +edt.ENTITYPREFIX +'_added_energy',
+                    entity_id: 'sensor.' + edt.ENTITYPREFIX + '_added_energy',
                     text: 'output_limit',
                     unit_show: true,
                 },
@@ -172,7 +172,7 @@ export const data:template = {
 
             'Waiting for car demand': [
                 {
-                    entity_id: 'sensor.' +edt.ENTITYPREFIX +'_added_energy',
+                    entity_id: 'sensor.' + edt.ENTITYPREFIX + '_added_energy',
                     text: 'session_energy',
                     unit_show: true,
                 },
@@ -180,19 +180,19 @@ export const data:template = {
 
             error: [
                 {
-                    entity_id: 'sensor.' +edt.ENTITYPREFIX +'_added_energy',
+                    entity_id: 'sensor.' + edt.ENTITYPREFIX + '_added_energy',
                     text: 'session_energy',
                     unit_show: true,
                 },
             ],
             Scheduled: [
                 {
-                    entity_id: 'sensor.' +edt.ENTITYPREFIX +'_status_description',
+                    entity_id: 'sensor.' + edt.ENTITYPREFIX + '_status_description',
                     text: 'Charger status',
                     unit_show: true,
                 },
                 {
-                    entity_id: 'binary_sensor.' +edt.ENTITYPREFIX +'_basic_schedule',
+                    entity_id: 'binary_sensor.' + edt.ENTITYPREFIX + '_basic_schedule',
                     text: 'schedule',
                 },
                 {
@@ -203,10 +203,10 @@ export const data:template = {
                     calc_function: 'min',
                     calc_entities: [
                         {
-                            entity_id: 'sensor.' +edt.ENTITYPREFIX +'_available_power',
+                            entity_id: 'sensor.' + edt.ENTITYPREFIX + '_available_power',
                         },
                         {
-                            entity_id: 'sensor.' +edt.ENTITYPREFIX +'_charging_current',
+                            entity_id: 'sensor.' + edt.ENTITYPREFIX + '_charging_current',
                         },
                     ]
                 }
@@ -217,22 +217,22 @@ export const data:template = {
         toolbar_left: {
             default: [
                 // {},
-                ],
+            ],
 
             disconnected: [
                 // {},
             ],
 
             awaiting_start: [
-                // {},            
+                // {},
             ],
 
             charging: [
-                // {},            
+                // {},
             ],
 
             completed: [
-                // {},            
+                // {},
             ],
 
             error: [
@@ -246,25 +246,28 @@ export const data:template = {
             default: [
                 {
                     service: 'persistent_notification.create',
-                    service_data: {message: 'Firmware update is available, but only possible when disconnected!', title: 'Update'},
+                    service_data: {
+                        message: 'Firmware update is available, but only possible when disconnected!',
+                        title: 'Update'
+                    },
                     text: 'update',
                     icon: 'mdi:file-download',
-                    conditional_entity: 'binary_sensor.' +edt.ENTITYPREFIX +'_update_available',
+                    conditional_entity: 'binary_sensor.' + edt.ENTITYPREFIX + '_update_available',
                 },
-                ],
+            ],
 
             disconnected: [
                 {
                     service: 'easee.action_command',
-                    service_data: {device_id: edt.SERVICEID_DEVICE, action_command: 'update_firmware'},
+                    service_data: { device_id: edt.SERVICEID_DEVICE, action_command: 'update_firmware' },
                     text: 'update',
                     icon: 'mdi:file-download',
-                    conditional_entity: 'binary_sensor.' +edt.ENTITYPREFIX +'_update_available',
+                    conditional_entity: 'binary_sensor.' + edt.ENTITYPREFIX + '_update_available',
                 },
             ],
         },
 
-        }
+    }
 
 }
 
